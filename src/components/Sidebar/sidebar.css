@@ -1,0 +1,27 @@
+.sidebar{
+    flex:2;
+    height:750px ;
+   
+}
+.sidewrapper{
+    padding: 10;
+    margin-left: 40px;
+    position: fixed; 
+    width: 13.5%;
+    
+}
+.sidebarList{
+    padding: 0;
+    list-style: none;
+    background-color: rgb(248, 238, 226);
+    border-radius: 10px;
+}
+.sidebarListItem{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+.sidebarIcon{
+    margin-right: 15px;
+    
+}

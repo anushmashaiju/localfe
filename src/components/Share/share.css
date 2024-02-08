@@ -1,0 +1,90 @@
+.share {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    background-color: rgb(248, 238, 226);
+}
+
+.shareWrapper {
+    padding: 10px;
+}
+
+.shareTop {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.shareInput::placeholder {
+    color:rgb(142, 5, 101) ;
+    font-style: italic;
+  }
+
+
+.shareInput {
+    border: none;
+    width: 98%;
+    height: 100%px;
+    color:rgb(142, 5, 101);
+    font-size: 20px;
+}
+
+.shareInput:focus {
+    outline: none;
+}
+
+.shareHr {
+    margin: 20px;
+}
+
+.shareMiddle {
+    display: flex;
+    align-items: center;
+    justify-self: space-between;
+}
+.shareOptions{
+    display: flex;
+    
+}
+
+.shareSingleOption {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.shareIcon {
+    font-size: 20px;
+    margin-right: 3px;
+}
+.shareOptionText{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(142, 5, 101);
+}
+.shareBottom {
+    display: flex;
+    align-items: center;
+    justify-self: space-between;
+    margin-top: 30px;
+    padding: 10px;
+
+}
+.shareButton {
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgb(142, 5, 101);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+}
+.sendIcon{
+    margin-left: 8px;
+}
