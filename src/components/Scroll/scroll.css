@@ -1,0 +1,10 @@
+.scroll{
+    background-color: rgb(142, 5, 101);
+  height: 80px;
+ margin-bottom: 20px;
+}
+.scrolltext{
+    color: white;
+    font-size: 50px;
+   
+}

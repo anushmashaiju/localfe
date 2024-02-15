@@ -1,6 +1,6 @@
 .share {
     width: 100%;
-    height: 250px;
+
     border-radius: 10px;
     -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
@@ -16,18 +16,24 @@
     align-items: center;
     height: 50px;
 }
+.shareProfileImg{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 .shareInput::placeholder {
     color:rgb(142, 5, 101) ;
     font-style: italic;
+    
   }
-
-
 .shareInput {
     border: none;
     width: 98%;
-    height: 100%px;
+    height: 100px;
     color:rgb(142, 5, 101);
     font-size: 20px;
+    margin-top: 70px;
 }
 
 .shareInput:focus {
@@ -40,21 +46,17 @@
 
 .shareMiddle {
     display: flex;
-    align-items: center;
-    justify-self: space-between;
+    padding-top: 40px;   
 }
 .shareOptions{
-    display: flex;
-    
+    display: flex;    
 }
-
 .shareSingleOption {
     display: flex;
     align-items: center;
     margin-right: 50px;
     cursor: pointer;
 }
-
 .shareIcon {
     font-size: 20px;
     margin-right: 3px;
@@ -63,14 +65,13 @@
     font-size: 20px;
     font-weight: 500;
     color: rgb(142, 5, 101);
+    cursor: pointer;
 }
 .shareBottom {
     display: flex;
     align-items: center;
-    justify-self: space-between;
-    margin-top: 30px;
+    justify-self: space-between; 
     padding: 10px;
-
 }
 .shareButton {
     border: none;
@@ -87,4 +88,22 @@
 }
 .sendIcon{
     margin-left: 8px;
+}
+.sendIcon:hover {
+    color: black;
+}
+.shareImgContainer{
+    padding: 0 20px 10px 20px;
+    position: relative;
+}
+.shareImg{
+    width: 100%;
+    object-fit: cover;
+}
+.shareCancelImg{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+    opacity: 0.7;
 }

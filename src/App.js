@@ -1,24 +1,22 @@
+import { useContext } from "react";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/home page/Home";
-import {
-  Route,
-  BrowserRouter,
-  Routes,
-
-} from "react-router-dom";
+import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
+import { AuthContext } from "./context/AuthContext";
 
 
 function App() {
+  const { user } = useContext(AuthContext);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/Login' element={<Login/>} />
-        <Route path="/SignUp" element={<SignUp/>} />
+        <Route path="/" element={user ? <Home /> : <Login />} />
+        <Route path="/Login" element={user ? <Navigate to="/" /> : <Login />} />
+        <Route path="/SignUp" element={user ? <Navigate to="/" /> : <SignUp />} />
       </Routes>
     </BrowserRouter>
-
   );
 }
 
