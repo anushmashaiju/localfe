@@ -1,69 +1,149 @@
-.post{
+/* Original styles for .post */
+.post {
     width: 100%;
     border-radius: 10px;
     -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-    margin: 30px 0;
-    background-color:rgb(248, 238, 226);
-}
-.postWrapper{
+    margin: 5px 5px;
+    background-color: rgb(248, 238, 226);
+    
+  }
+  
+  .postWrapper {
     padding: 10px;
-}
-.postTop{
+  }
+  
+  .postTop {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.postTopLeft{
+  }
+  
+  .postTopLeft {
     display: flex;
     align-items: center;
-}
-.postProfileImg{
+  }
+  
+  .postProfileImg {
     width: 32px;
     height: 32px;
     border-radius: 50%;
     object-fit: cover;
-}
-.postUsername{
+  }
+  
+  .postUsername {
     font-size: 20px;
     font-weight: 500;
     margin: 0 10px;
-}
-.postDate{
+  }
+  
+  .postDate {
     font-size: 15px;
-}
-.postCenter{
+  }
+  
+  .postCenter {
     margin: 20px;
-}
-.postImg{
+  }
+  
+  .postImg {
     margin-top: 20px;
     width: 100%;
     max-height: 500px;
     object-fit: contain;
-}
-.postBottom{
+  }
+  
+  .postBottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.postBottomLeft{
+  }
+  
+  .likeIcon {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .favIcon {
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .postLikeCounter,
+  .postFavCounter {
+    font-size: 12px;
+  }
+  
+  .postUsername {
+    color: rgb(142, 5, 101);
+  }
+  
+  .postTopRight {
+    position: relative;
+  }
+  
+  .deleteConfirmation {
+    position: absolute;
+    right: 0;
     display: flex;
-    align-items: center;
-}
-.likeIcon{
-    margin-right: 5px;
+    flex-direction: column;
+    z-index: 1;
+  }
+  
+  .deleteConfirmation button {
+    background-color: rgb(142, 5, 101);
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
     cursor: pointer;
-}
-.favIcon{
-    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .deleteConfirmation button:hover {
+    background-color: rgb(142, 5, 101);
+  }
+  
+  .editTextArea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .editImageFile {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .editButton {
+    background-color: rgb(142, 5, 101);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-}
-.postLikeCounter{
-    font-size: 12px;
-}
-.postFavCounter{
-    font-size: 12px;
-}
-.postUsername{
-    color:rgb(142, 5, 101) ;
-}
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .postTopLeft {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .postUsername {
+      margin: 10px 0;
+    }
+  
+    .postImg {
+      max-height: 300px;
+    }
+  
+    .editTextArea {
+      height: 80px;
+    }
+  }
+  

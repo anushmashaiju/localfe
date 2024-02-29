@@ -4,6 +4,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/home page/Home";
 import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
+import MyFeed from "./pages/MyFeed/MyFeed";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={user ? <Home /> : <Login />} />
         <Route path="/Login" element={user ? <Navigate to="/" /> : <Login />} />
         <Route path="/SignUp" element={user ? <Navigate to="/" /> : <SignUp />} />
+      <Route path="/MyFeed" element={<MyFeed/>} />
       </Routes>
     </BrowserRouter>
   );

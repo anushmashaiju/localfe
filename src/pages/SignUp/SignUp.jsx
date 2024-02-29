@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';  
 import "./signup.css";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+
 
 export default function SignUp() {
   const username = useRef();
@@ -82,9 +83,7 @@ const handleClick = async (e) => {
                 <label>Birthday:</label>
                 <input type="date" name="birthday" ref={birthday} required />
               </div>
-
             </div>
-
 
             <div className="signup-row">
               <div className="signup-item">
@@ -110,7 +109,7 @@ const handleClick = async (e) => {
 
             <button className='signupButton' type='submit'>Sign Up</button>
             <p className="login-link">
-              <span>Already have an account?</span> <a href="#login">Go to Login</a>
+              <span>Already have an account?</span> <a href="#login"onClick={() => navigate("/login")}>Go to Login</a>
             </p>
           </form>
         </div>

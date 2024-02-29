@@ -1,49 +1,112 @@
 .rightbar {
-    flex: 3;
- 
+  flex: 2.7;
 }
 
 .rightbarBox {
-    width: 85%;
-    height: 300px;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
-    margin-top: 20px;
-    padding: 10px;   
-    list-style:none;
-    background-color:rgb(248, 238, 226);
-    display: flex;
-    flex-direction: column;
-   
+  width: 85%;
+  height: 300px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin-top: 20px;
+  padding: 10px;
+  list-style: none;
+  background-color: rgb(248, 238, 226);
+  display: flex;
+  flex-direction: column;
 }
 
 .rigtbarWrapper {
-    padding: 10;
-    position: fixed;
-    width: 25%;
+  padding: 10;
+  position: fixed;
+  width: 25%;
+  z-index: 50;
+}
 
+.rightbarListItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.rightbarListItem{
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    
+
+.rightbarIcon {
+  margin-right: 15px;
 }
-.rightbarIcon{
-    margin-right: 15px;
-   
-}
+
 .todaysEventsContainer {
-    flex: 1;
-    overflow-y: auto;
-    
-  }
-.todaysEventsList{
-    margin-top: 20px;
-    align-items: center;
- 
+  flex: 1;
+  overflow-y: auto;
 }
-.eventItem{
-    margin: 20px;
+
+.todaysEventsList {
+  margin-top: 20px;
+  align-items: center;
+}
+
+.eventItem {
+  margin: 20px;
+}
+
+.addEventButton {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgb(142, 5, 101);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  width: 90%;
+  border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .rigtbarWrapper {
+    width: 100%;
+  }
+
+  .rightbar {
+    flex: auto; /* Adjust as needed */
+  }
+
+  .rightbarBox {
+    width: 100%;
+  }
+  
+  .modalEvent {
+    width: 100%;
+  }
+
+  .modalContentEvent {
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+  }
+
+  .closeModalButton {
+    top: 5px;
+    right: 5px;
+    font-size: 16px;
+  }
+
+  .modalContentEvent form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modalContentEvent label {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .modalContentEvent input,
+  textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .modalContentEvent button {
+    width: 100%;
+    max-width: 150px; /* Adjust as needed */
+  }
 }

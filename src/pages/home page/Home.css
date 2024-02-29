@@ -1,5 +1,13 @@
 .homeContainer{
     display: flex;
     width: 100%;
+    position: relative;
+    padding-top: 80px;
+}
+.feed{
+    flex: 7;
+}
+.feedWrapper{
+    padding: 20px;
     
 }

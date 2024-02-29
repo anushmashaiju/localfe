@@ -1,10 +1,26 @@
-.scroll{
+.scroll {
     background-color: rgb(142, 5, 101);
-  height: 80px;
- margin-bottom: 20px;
+    height: 80px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
 }
-.scrolltext{
+
+.scrolltext {
     color: white;
     font-size: 50px;
-   
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .scroll {
+        height: 60px; /* Adjust as needed */
+    }
+
+    .scrolltext {
+        font-size: 40px; /* Adjust as needed */
+    }
 }

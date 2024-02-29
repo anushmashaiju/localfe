@@ -9,22 +9,25 @@
     background-size: cover;
     background-position: right;
 }
+
 .signupWrapper {
     width: 90%;
     height: 100%;
     display: flex;
 }
+
 .signupRight {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .signupLeft {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-   
+
 }
 
 .signupLogo {
@@ -110,7 +113,7 @@ input {
     font-weight: 500;
     cursor: pointer;
     display: block;
- margin: auto;
+    margin: auto;
 }
 
 .login-link {
