@@ -1,10 +1,13 @@
 // Navbar.jsx
 import React, { useContext, useState } from 'react';
 import "./Navbar.css";
-import { Bookmark, Edit, HelpCenter, Logout, Notifications, Person, Place, Search, Settings } from '@mui/icons-material';
+import { Bookmark, Edit, HelpCenter, Notifications, Search, Settings } from '@mui/icons-material';
 import { AuthContext } from '../../context/AuthContext';
 import EditProfileModal from './EditProfileModal';
 import { Link } from 'react-router-dom';
+import { Logout } from '../../context/AuthActions';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 
 function Navbar({ setSelectedLocation }) {
     const { user, dispatch } = useContext(AuthContext);
@@ -16,20 +19,13 @@ function Navbar({ setSelectedLocation }) {
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
-
-    const handleProfileUpdate = (newUsername, newProfilePicture) => {
-        dispatch({
-            type: "UPDATE_USER",
-            payload: {
-                user: {
-                    ...user,
-                    userName: newUsername,
-                    profilePicture: newProfilePicture,
-                },
-            },
-        });
-        setIsModalOpen(false);
+    const handleLogout = () => {
+        setSelectedLocation('');
+        // Dispatch the logout action
+        dispatch(Logout());
     };
+
+    
 
     const handleLocationButtonClick = () => {
         setDistrictsDropdown(!districtsDropdown);
@@ -58,7 +54,7 @@ function Navbar({ setSelectedLocation }) {
 
             <div className="navbarRight">
             <Link to="/" className='navbarLink'>Homepage</Link>
-                <Link to="/MyFeed" className='navbarLink'>My Feeds</Link>
+                <Link to="/AddPost" className='navbarLink'>Add Post</Link>
                 <span className='navbarLocation' onClick={handleLocationButtonClick}>
                     {selectedDistrict ? selectedDistrict : "Location"}
                 </span>
@@ -71,13 +67,10 @@ function Navbar({ setSelectedLocation }) {
                         ))}
                     </div>
                 )}
+                
             </div>
 
             <div className="navbarIcons">
-                <div className="navbarIconItem">
-                    <Person />
-                    <span className='navbarIconBadge'>1</span>
-                </div>
                 <div className="navbarIconItem">
                     <Notifications />
                     <span className='navbarIconBadge'>1</span>
@@ -111,13 +104,13 @@ function Navbar({ setSelectedLocation }) {
                         <Settings className='dropdownIcon' />
                         <span className='dropdownListItemText'>Settings</span>
                     </li></a>
-                    <a href="#6"><li className="dropdownListItem">
-                        <Logout className='dropdownIcon' />
+                    <a href="#6"onClick={handleLogout}><li className="dropdownListItem">
+                        <LogoutIcon  className='dropdownIcon' />
                         <span className='dropdownListItemText'>LogOut</span>
                     </li></a>
                 </div>
             </div>
-            <EditProfileModal isOpen={isModalOpen} onRequestClose={toggleModal} onProfileUpdate={handleProfileUpdate} />
+            <EditProfileModal isOpen={isModalOpen} onRequestClose={toggleModal} />
             <span className='user' title={user.userName}>{user.userName}</span>
         </div>
     );

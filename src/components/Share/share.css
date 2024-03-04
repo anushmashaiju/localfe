@@ -1,10 +1,11 @@
 .share {
-    width: 100%;
-
+    width: 74%;
+    margin:auto; 
     border-radius: 10px;
     -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
     background-color: rgb(248, 238, 226);
+   
 }
 
 .shareWrapper {
@@ -127,6 +128,6 @@
   }
   
   .sharedropdownItem:hover {
-    background-color: #f2f2f2;
+    background-color: #45a049;
   }
   

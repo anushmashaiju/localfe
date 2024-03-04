@@ -36,7 +36,15 @@
     font-weight: 500;
     margin: 0 10px;
   }
-  
+  .postbutton{
+    background-color:rgb(142, 5, 101) ;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+  .postbutton:hover{
+    background-color: #45a049 ;
+  }
   .postDate {
     font-size: 15px;
   }
@@ -63,13 +71,8 @@
     cursor: pointer;
   }
   
-  .favIcon {
-    margin-right: 5px;
-    cursor: pointer;
-  }
   
-  .postLikeCounter,
-  .postFavCounter {
+  .postLikeCounter {
     font-size: 12px;
   }
   
@@ -93,14 +96,14 @@
     background-color: rgb(142, 5, 101);
     color: #fff;
     border: none;
-    padding: 8px;
-    border-radius: 10px;
+    padding: 2px;
+   font-size:16px;
     cursor: pointer;
     margin-bottom: 5px;
   }
   
   .deleteConfirmation button:hover {
-    background-color: rgb(142, 5, 101);
+    background-color: #45a049;
   }
   
   .editTextArea {
@@ -110,7 +113,7 @@
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+ 
   }
   
   .editImageFile {
@@ -126,7 +129,9 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+  .editButton:hover {
+    background-color: #45a049;
+  }
   /* Responsive Styles */
   @media screen and (max-width: 768px) {
     .postTopLeft {

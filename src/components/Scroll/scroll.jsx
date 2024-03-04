@@ -6,7 +6,7 @@ function Scroll({ selectedDistrict }) {
     return (
         <div className="scroll">
             <marquee behavior='scroll' direction='right' className="rolling-booking">
-                <h3 className="scrolltext">Welcome to {selectedDistrict || 'Local Connect'}</h3>
+                <h3 className="scrolltext">Welcome to {selectedDistrict || 'Local Connect-select the location to see the posts'}</h3>
             </marquee>
         </div>
     );

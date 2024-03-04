@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import './share.css'
 import { Cancel, EmojiEmotions, Label, PermMedia, Room, Send } from '@mui/icons-material'
-import { AuthContext } from "../../../context/AuthContext"
+import { AuthContext } from "../../context/AuthContext"
 import axios from 'axios'
 
 
@@ -26,7 +26,7 @@ function Share({ setPostchange, postchange }) {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(`/posts?location=${selectedDistrict}`);
@@ -79,6 +79,28 @@ function Share({ setPostchange, postchange }) {
       console.error(err);
     }
   };
+*/const submitHandler = async (e) => {
+  e.preventDefault();
+  const newPost = new FormData();
+  newPost.append("userId", user._id);
+  newPost.append("description", description.current.value);
+  newPost.append("location", selectedDistrict !== 'Location' ? selectedDistrict : '');
+
+  if (file) {
+      newPost.append("image", file);
+  }
+
+  try {
+      await axios.post('/posts', newPost);
+      setPostchange(!postchange);
+      // Clear input values after posting
+      description.current.value = '';
+      setFile(null);
+      setSelectedDistrict(''); // Clear selected district
+  } catch (err) {
+      console.error(err);
+  }
+};
 
   
   return (

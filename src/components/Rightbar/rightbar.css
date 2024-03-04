@@ -1,19 +1,20 @@
 .rightbar {
-  flex: 2.7;
-}
+  flex: 3;
 
+}
 .rightbarBox {
-  width: 85%;
+  width: 92%;
   height: 300px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   margin-top: 20px;
-  padding: 10px;
-  list-style: none;
-  background-color: rgb(248, 238, 226);
+  padding: 10px;   
+  list-style:none;
+  background-color:rgb(248, 238, 226);
   display: flex;
   flex-direction: column;
+ 
 }
 
 .rigtbarWrapper {
@@ -22,91 +23,113 @@
   width: 25%;
   z-index: 50;
 }
-
-.rightbarListItem {
+.rightbarListItem{
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  
 }
-
-.rightbarIcon {
+.rightbarIcon{
   margin-right: 15px;
+ 
 }
-
 .todaysEventsContainer {
   flex: 1;
   overflow-y: auto;
+  
 }
-
-.todaysEventsList {
+.todaysEventsList{
   margin-top: 20px;
   align-items: center;
-}
 
-.eventItem {
+}
+.eventItem{
   margin: 20px;
 }
-
 .addEventButton {
   margin-top: 20px;
-  padding: 10px;
-  background-color: rgb(142, 5, 101);
-  color: #fff;
-  cursor: pointer;
-  border: none;
-  width: 90%;
-  border-radius: 10px;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-  .rigtbarWrapper {
-    width: 100%;
-  }
-
-  .rightbar {
-    flex: auto; /* Adjust as needed */
-  }
-
-  .rightbarBox {
-    width: 100%;
-  }
+   padding: 10px;
+   background-color: rgb(142, 5, 101);
+   color: #fff;
+   cursor: pointer;
+   border: none;
+   width: 97%;
+   border-radius: 10px;
+ }
+ .addEventButton:hover {
+  background-color:  #45a049;
   
-  .modalEvent {
-    width: 100%;
-  }
-
+ }
+.modalEvent {
+   display:contents;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 80%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   cursor: pointer;
+   z-index: 1000; /* Adjust the z-index value */
+ }
+ 
   .modalContentEvent {
-    width: 100%;
-    max-width: 600px; /* Adjust as needed */
-  }
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 5px;
+   width: 80%;
+   
+ }
+ 
+ .closeModalButton {
+   position:relative;
+   top: 10px;
+  left: 300px;
+   font-size: 20px;
+   color:rgb(142, 5, 101) ;
+   cursor: pointer;
+ }
 
-  .closeModalButton {
-    top: 5px;
-    right: 5px;
-    font-size: 16px;
-  }
+ .modalContentEvent form {
+   display: flex;
+   flex-direction: column;
+ }
 
-  .modalContentEvent form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.modalContentEvent label {
+   margin-top: 10px;
+ }
+ 
+.modalContentEvent input,
+ textarea {
+   margin-bottom: 10px;
+   padding: 5px;
+ }
+ 
+ .modalContentEvent  button {
+   padding: 10px;
+   background-color:  rgb(142, 5, 101);
+   color: #fff;
+   cursor: pointer;
+   border: none;
+   border-radius: 10px;
+  width: 100px;
+  
+ }
+ .modalContentEvent  button:hover {
+  background-color:  #45a049;
+}
+.eventDelete{
+  background-color: rgb(142, 5, 101);
+   padding: 5px;
+   color: #fff;
+    margin-left: 10px;
+     border: none; 
+     border-radius: 5px; 
+     cursor: pointer;
+     font-size: 12px;
 
-  .modalContentEvent label {
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  .modalContentEvent input,
-  textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-  }
-
-  .modalContentEvent button {
-    width: 100%;
-    max-width: 150px; /* Adjust as needed */
-  }
+}
+.eventDelete:hover{
+  background-color:  #45a049;
 }

@@ -52,9 +52,9 @@ export default function Login() {
         <div className="loginRight">
           <form className="loginBox" onSubmit={handleClick}>
             <label className='loginLabel'>Email</label>
-            <input placeholder='' className='loginInput' required ref={email} />
+            <input placeholder='' type="email"className='loginInput' required ref={email} />
             <label className='loginLabel'>Password</label>
-            <input placeholder='' className='loginInput' required minLength="5" ref={password} />
+            <input placeholder='' type="password" className='loginInput' required minLength="5" ref={password} />
             <button className="loginButton">{isFetching ? <CircularProgress size={'20px'} /> : "Log In"}</button>
             <span className="loginForgot">Forgot Password?</span>
             <button className='createButton' onClick={navigateToSignUp}>Create a new account</button>

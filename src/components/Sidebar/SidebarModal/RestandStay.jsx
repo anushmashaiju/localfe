@@ -74,9 +74,7 @@ function AddRestandStayModal({ isOpen, onClose, onAddRestandStay }) {
                   {RestandStay.name} - {RestandStay.location}
                   <button
                     style={{ backgroundColor: 'rgb(142, 5, 101)', padding: '10px',color: '#fff', marginLeft: '20px', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
-                    onClick={() => handleDeleteRestandStay(index)}
-                  >
-                    Delete
+                    onClick={() => handleDeleteRestandStay(index)} > Delete
                   </button>
                 </li>
               ))}
@@ -88,16 +86,11 @@ function AddRestandStayModal({ isOpen, onClose, onAddRestandStay }) {
         <div style={{ display: 'flex', marginTop: '10px' }} className="modalButtons">
           <button
             style={{ flex: '1', padding: '10px', backgroundColor: 'rgb(142, 5, 101)', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', marginRight: '5px' }}
-            onClick={handleSave}
-          >
-            Save
+            onClick={handleSave} >Save
           </button>
-
           <button
             style={{ flex: '1', padding: '10px', backgroundColor: 'rgb(142, 5, 101)', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer', marginLeft: '5px' }}
-            onClick={onClose}
-          >
-            Cancel
+            onClick={onClose}> Cancel
           </button>
         </div>
       </div>
