@@ -7,7 +7,7 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 const EditProfileModal = ({ isOpen, onRequestClose }) => {
- 
+
   return (
     <Modal
       isOpen={isOpen}
@@ -25,15 +25,12 @@ const EditProfileModal = ({ isOpen, onRequestClose }) => {
         <input
           type="text"
           id="newUsername"
-  
-         
         />
         <label htmlFor="profilePicture">New Profile Picture:</label>
         <input
           type="file"
           id="profilePicture"
           accept=".png, .jpg, .jpeg"
-         
         />
       </div>
       <div className="editProfileFooter">
@@ -41,7 +38,7 @@ const EditProfileModal = ({ isOpen, onRequestClose }) => {
           Save
           <Send htmlColor="white" className="sendIcon" />
         </button>
-        <Cancel  />
+        <Cancel />
       </div>
     </Modal>
   );

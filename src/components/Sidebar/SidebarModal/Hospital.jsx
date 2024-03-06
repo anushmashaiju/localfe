@@ -1,4 +1,4 @@
-// AddHospitalModal.jsx
+
 import React, { useState } from 'react';
 
 function AddHospitalModal({ isOpen, onClose, onAddHospital }) {

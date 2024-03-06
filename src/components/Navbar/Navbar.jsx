@@ -24,9 +24,6 @@ function Navbar({ setSelectedLocation }) {
         // Dispatch the logout action
         dispatch(Logout());
     };
-
-    
-
     const handleLocationButtonClick = () => {
         setDistrictsDropdown(!districtsDropdown);
     };
@@ -66,8 +63,7 @@ function Navbar({ setSelectedLocation }) {
                             </div>
                         ))}
                     </div>
-                )}
-                
+                )}   
             </div>
 
             <div className="navbarIcons">
@@ -110,8 +106,10 @@ function Navbar({ setSelectedLocation }) {
                     </li></a>
                 </div>
             </div>
+
             <EditProfileModal isOpen={isModalOpen} onRequestClose={toggleModal} />
             <span className='user' title={user.userName}>{user.userName}</span>
+            
         </div>
     );
 }

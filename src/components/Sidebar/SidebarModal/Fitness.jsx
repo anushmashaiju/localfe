@@ -1,4 +1,4 @@
-// AddFittnessModal.jsx
+
 import React, { useState } from 'react';
 
 function AddFittnessModal({ isOpen, onClose, onAddFittness }) {

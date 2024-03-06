@@ -1,5 +1,6 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import AuthReducer from './AuthReducer'
+import { LoginSuccess } from "./AuthActions";
 
 const INITIAL_STATE = {
     user: null,
@@ -9,7 +10,18 @@ const INITIAL_STATE = {
 export const AuthContext = createContext(INITIAL_STATE);
 export const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
-   
+  
+    useEffect(() => {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        if (storedUser) {
+          dispatch(LoginSuccess(storedUser));
+        }
+      }, []);
+      
+      useEffect(() => {
+        localStorage.setItem("user", JSON.stringify(state.user));
+      }, [state.user]); 
+    
     return (
         <AuthContext.Provider
             value={{

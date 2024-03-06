@@ -1,4 +1,4 @@
-// AddCafeModal.jsx
+
 import React, { useState } from 'react';
 
 function AddCafeModal({ isOpen, onClose, onAddCafe }) {

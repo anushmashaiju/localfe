@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import "./signup.css";
 import axios from 'axios';
 
-
 export default function SignUp() {
   const username = useRef();
   const email = useRef();

@@ -1,4 +1,4 @@
-// AddRestaurantModal.jsx
+
 import React, { useState } from 'react';
 
 function AddRestandStayModal({ isOpen, onClose, onAddRestandStay }) {

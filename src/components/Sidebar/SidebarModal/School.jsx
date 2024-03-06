@@ -1,4 +1,4 @@
-// AddSchoolModal.jsx
+
 import React, { useState } from 'react';
 
 function AddSchoolModal({ isOpen, onClose, onAddSchool }) {

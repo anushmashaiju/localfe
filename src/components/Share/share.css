@@ -62,10 +62,11 @@
     font-weight: 500;
     color: rgb(142, 5, 101);
     cursor: pointer;
+   
 }
 .shareBottom {
     display: flex;
-    align-items: center;
+    align-items:center;
     justify-self: space-between; 
     padding: 10px;
 }

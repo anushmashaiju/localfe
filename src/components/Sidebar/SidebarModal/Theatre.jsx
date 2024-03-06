@@ -1,4 +1,4 @@
-// AddTheatreModal.jsx
+
 import React, { useState } from 'react';
 
 function AddTheatreModal({ isOpen, onClose, onAddTheatre }) {

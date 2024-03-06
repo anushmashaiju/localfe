@@ -6,7 +6,6 @@
     position: fixed;
     width: 22%;
     z-index: 50;
-
 }
 
 .sidebarList {
@@ -37,8 +36,8 @@
     .sidewrapper {
         width: 22%;
         margin-left: -10px;
-        position: fixed; /* Adjust as needed */
-        z-index: 50; /* Ensure it is below other elements */
+        position: fixed;
+        z-index: 50; 
     }
 
     .sidebarList {

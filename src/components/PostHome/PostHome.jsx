@@ -4,7 +4,6 @@ import { MoreVert, ThumbUp } from '@mui/icons-material'
 import axios from 'axios';
 import { format } from "timeago.js"
 import { AuthContext } from '../../context/AuthContext';
-//import { Users } from "../../dummyData";
 
 function Post({ post, postchange, setPostchange }) {
     const [like, setLike] = useState(post.likes.length);
@@ -42,17 +41,6 @@ function Post({ post, postchange, setPostchange }) {
         setIsLiked(!isLiked);
     };
 
-
-    /*const deleteHandler = async () => {
-        try {
-            await axios.delete(`/posts/${post._id}`, { data: { userId: currentUser._id } });
-            setMyPosts((prevPosts) => prevPosts.filter((p) => p._id !== post._id));
-            setIsDeleteOpen(false);
-        } catch (error) {
-            console.error('Error deleting post:', error);
-        }
-    };
-*/
     const deleteHandler = async () => {
         try {
             await axios.delete(`/posts/${post._id}`, { data: { userId: currentUser._id } });
@@ -93,44 +81,25 @@ function Post({ post, postchange, setPostchange }) {
             }
         }
     };
-
-
     return (
         <div className='post'>
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="postTopLeft">
                         <img className="postProfileImg"
-                            //src={Users.filter((u) => u.id === post?.id)[0].profilePicture}
                             src={user.profilePicture ? PF + user.profilePicture : PF + "dp/default-avatar-profile-icon-social-600nw-1677509740.webp"}
                             alt=""
                             onError={(e) => {
                                 console.error("Image failed to load:", e.target.src)
-                            }} />
-                        {/*<span className="postUsername">{Users.filter((u) => u.id === post?.id)[0].username}</span>*/}
-                        <span className="postUsername">{user.userName}</span>
-
-                        {/* <span className="postDate">{post.date}</span> */}
+                            }} />               
+                        <span className="postUsername">{user.userName}</span>         
                         <span className='postLocation'>{post.location}</span>
                     </div>
                     <div className="postTopRight">
 
-                        {/*<MoreVert onClick={() => setIsDeleteOpen(!isDeleteOpen)} />
-
-                        {isDeleteOpen && (
-                            <div className="deleteConfirmation">
-                                <button onClick={deleteHandler}>Delete</button>
-                                <button onClick={() => setIsEditOpen(true)}>Edit</button>
-                            </div>
-                        )}
-                    </div>
-                </div>
-                        */}
-
                         {isCurrentUserPost && (
                             <>
                                 <MoreVert onClick={() => setIsDeleteOpen(!isDeleteOpen)} />
-
                                 {isDeleteOpen && (
                                     <div className="deleteConfirmation">
                                         <button onClick={deleteHandler}>Delete</button>
@@ -162,22 +131,15 @@ function Post({ post, postchange, setPostchange }) {
                     <div className="postBottomLeft">
                         <ThumbUp htmlColor="blue" className='likeIcon' onClick={likeHandler} />
                         <span className="postLikeCounter">{like}</span>
-                    </div>
-                    {/*} <span className='postDate'>{format(post.postDate)}</span>
-                    {isEditOpen &&
-                     <button className='editButton' onClick={editHandler}>Save</button>}
-                    */}
+                    </div>            
                     <span className='postDate'>{format(post.postDate)}</span>
                     {isCurrentUserPost && isEditOpen && (
                         <button className='editButton' onClick={editHandler}>Save</button>
                     )}
-                    <span className="postDate">{new Date(post.postDate).toLocaleString()}</span>
-            
-       
+                    <span className="postDate">{new Date(post.postDate).toLocaleString()}</span>    
             </div>
         </div>
         </div>
-
     )
 }
 

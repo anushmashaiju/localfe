@@ -1,4 +1,4 @@
-// AddMallModal.jsx
+
 import React, { useState } from 'react';
 
 function AddMallModal({ isOpen, onClose, onAddMall }) {

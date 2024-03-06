@@ -39,12 +39,12 @@ function Home() {
   const [selectedLocation, setSelectedLocation] = useState('');
   useEffect(() => {
     fetchPosts();
-  }, [user._id, postchange,selectedLocation]);
+  }, [user._id, postchange, selectedLocation]);
 
   const fetchPosts = async () => {
     try {
       //const res = await axios.get(`http://localhost:8800/api/posts`);
-     const res = await axios.get(`http://localhost:8800/api/posts/location/${selectedLocation}`);
+      const res = await axios.get(`http://localhost:8800/api/posts/location/${selectedLocation}`);
       setPosts(
         res.data.sort((p1, p2) => {
           return new Date(p2.createdAt) - new Date(p1.createdAt);
@@ -55,24 +55,19 @@ function Home() {
       // Handle the error as needed (e.g., show a user-friendly message, log the error, etc.)
     }
   };
-  //const handleLocationChange = (district) => {
-    //setSelectedDistrict(district);
-    // Handle other location change logic if needed
- // };
+
   return (
     <>
- <Navbar setSelectedLocation={setSelectedLocation} /> 
+      <Navbar setSelectedLocation={setSelectedLocation} />
 
-            <Scroll selectedDistrict={selectedLocation} />
+      <Scroll selectedDistrict={selectedLocation} />
       <div className='homeContainer'>
         <Sidebar />
         <div className='feed'>
           <div className='feedWrapper'>
-        
-          
             {posts.map((p) => (
-  <Post key={p._id} post={p} currentUser={user} postchange={postchange} setPostchange={setPostchange} />
-))}
+              <Post key={p._id} post={p} currentUser={user} postchange={postchange} setPostchange={setPostchange} />
+            ))}
           </div>
         </div>
         <Rightbar />

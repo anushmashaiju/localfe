@@ -1,4 +1,4 @@
-// AddTouristPlaceModal.jsx
+
 import React, { useState } from 'react';
 import './TouristPlaceModal.css';
 
