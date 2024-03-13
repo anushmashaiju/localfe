@@ -14,10 +14,17 @@ function Home() {
   const [postchange, setPostchange] = useState(true);
   const [posts, setPosts] = useState([]);
   const { user } = useContext(AuthContext);
-  const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState(
+    localStorage.getItem('selectedLocation') || ''
+  );
+
   useEffect(() => {
-    fetchPosts();
+    if (selectedLocation) {
+      fetchPosts();
+      localStorage.setItem('selectedLocation', selectedLocation);
+    }
   }, [user._id, postchange, selectedLocation]);
+  
 
   const fetchPosts = async () => {
     try {

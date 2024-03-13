@@ -20,7 +20,7 @@ function Navbar({ setSelectedLocation }) {
         setIsModalOpen(!isModalOpen);
     };
     const handleLogout = () => {
-        setSelectedLocation('');
+    
         // Dispatch the logout action
         dispatch(Logout());
     };
