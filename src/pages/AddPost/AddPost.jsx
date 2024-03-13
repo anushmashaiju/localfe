@@ -5,6 +5,7 @@ import { AuthContext } from '../../context/AuthContext.js';
 import axios from 'axios';
 import Post from '../../components/PostHome/PostHome.jsx';
 import './AddPost.css';
+import { BASE_URL } from '../../constants/constants.js';
 
 function AddPost() {
   const [postchange, setPostchange] = useState(true);
@@ -20,7 +21,7 @@ function AddPost() {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get(`http://localhost:8800/api/posts/timeline/${user._id}`);
+      const res = await axios.get(`${BASE_URL}/api/posts/timeline/${user._id}`);
       console.log("API Response:", res.data); // Check the API response
 
       if (Array.isArray(res.data)) {
