@@ -16,7 +16,7 @@ function Rightbar() {
 
   const fetchUpcomingEvents = async () => {
     try {
-      const res = await axios.get('${BASE_URL}/api/events/upcomingEvents');
+      const res = await axios.get(`${BASE_URL}/api/events/upcomingEvents`);
       if (res.status === 200) {
         const sortedEvents = res.data.sort((a, b) => new Date(a.date) - new Date(b.date));
         setUpcomingEvents(sortedEvents);
@@ -46,7 +46,7 @@ function Rightbar() {
 
   const onSubmit = async () => {
     try {
-      const res = await axios.post(`${BASE_URL}api/events/addEvent`, {
+      const res = await axios.post(`${BASE_URL}/api/events/addEvent`, {
         date: addEvent.date,
         eventname: addEvent.eventname,
         location: addEvent.location,

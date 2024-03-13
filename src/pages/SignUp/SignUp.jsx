@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./signup.css";
 import axios from 'axios';
+import { BASE_URL } from '../../constants/constants';
 
 export default function SignUp() {
   const username = useRef();
@@ -30,7 +31,7 @@ export default function SignUp() {
 
       try {
         console.log("Sending signup request...");
-        const response = await axios.post("/auth/SignUp", user);
+        const response = await axios.post(`${BASE_URL}/api/auth/SignUp`, user); // Use BASE_URL in the request
         console.log("Signup request successful:", response.data);
         navigate("/login");
       } catch (err) {

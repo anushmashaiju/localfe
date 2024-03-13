@@ -4,6 +4,7 @@ import { MoreVert, ThumbUp } from '@mui/icons-material'
 import axios from 'axios';
 import { format } from "timeago.js"
 import { AuthContext } from '../../context/AuthContext';
+import { BASE_URL } from '../../constants/constants';
 
 function Post({ post, postchange, setPostchange }) {
     const [like, setLike] = useState(post.likes.length);
@@ -26,24 +27,25 @@ function Post({ post, postchange, setPostchange }) {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(`users/${post.userId}`)
+            const res = await axios.get(`${BASE_URL}/api/users/${post.userId}`)
             setUser(res.data)
         };
         fetchUser()
     }, [post.userId])
 
-    const likeHandler = () => {
+    const likeHandler = async () => {
         try {
-            axios.put("/posts/" + post._id + "/like", { userId: currentUser._id })
+            await axios.put(`${BASE_URL}/api/posts/${post._id}/like`, { userId: currentUser._id });
+        } catch (err) {
+            // Handle errors
         }
-        catch (err) { }
         setLike(isLiked ? like - 1 : like + 1);
         setIsLiked(!isLiked);
     };
 
     const deleteHandler = async () => {
         try {
-            await axios.delete(`/posts/${post._id}`, { data: { userId: currentUser._id } });
+            await axios.delete(`${BASE_URL}/api/posts/${post._id}`, { data: { userId: currentUser._id } });
             setPostchange(!postchange); // Trigger a re-fetch or re-render to update the posts
         } catch (error) {
             console.error('Error deleting post:', error);
@@ -64,7 +66,7 @@ function Post({ post, postchange, setPostchange }) {
                 formData.append("image", post.image);
             }
 
-            const res = await axios.put(`/posts/${post._id}`, formData, {
+            const res = await axios.put(`${BASE_URL}/posts/${post._id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },

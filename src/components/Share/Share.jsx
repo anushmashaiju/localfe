@@ -4,6 +4,7 @@ import './share.css'
 import { Cancel, PermMedia, Room, Send } from '@mui/icons-material'
 import { AuthContext } from "../../context/AuthContext"
 import axios from 'axios'
+import { BASE_URL } from '../../constants/constants'
 
 function Share({ setPostchange, postchange }) {
   const { user } = useContext(AuthContext)
@@ -35,7 +36,7 @@ function Share({ setPostchange, postchange }) {
     }
 
     try {
-      await axios.post('/posts', newPost);
+      await axios.post(`${BASE_URL}/api/posts`, newPost);
       setPostchange(!postchange);
       // Clear input values after posting
       description.current.value = '';
