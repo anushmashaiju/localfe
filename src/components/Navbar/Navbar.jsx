@@ -1,5 +1,5 @@
 // Navbar.jsx
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "./Navbar.css";
 import { Bookmark, Edit, HelpCenter, Notifications, Search, Settings } from '@mui/icons-material';
 import { AuthContext } from '../../context/AuthContext';
@@ -7,7 +7,7 @@ import EditProfileModal from './EditProfileModal';
 import { Link } from 'react-router-dom';
 import { Logout } from '../../context/AuthActions';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import axios from 'axios';
 
 function Navbar({ setSelectedLocation }) {
     const { user, dispatch } = useContext(AuthContext);
@@ -15,6 +15,40 @@ function Navbar({ setSelectedLocation }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [districtsDropdown, setDistrictsDropdown] = useState(false);
     const [selectedDistrict, setSelectedDistrict] = useState('');
+    const [todaysEvents, setTodaysEvents] = useState([]);
+    const [tomorrowsEvents, setTomorrowsEvents] = useState([]);
+    const [showNotifications, setShowNotifications] = useState(false); // State to control visibility of notifications
+
+    const fetchTodaysAndTomorrowsEvents = async () => {
+        try {
+          const res = await axios.get('http://localhost:8800/api/events/todaysAndTomorrowsEvents');
+          if (res.status === 200) {
+            const { todaysEvents, tomorrowsEvents } = res.data;
+            setTodaysEvents(todaysEvents);
+            setTomorrowsEvents(tomorrowsEvents);
+          } else {
+            console.error('Failed to fetch today\'s and tomorrow\'s events. Unexpected response:', res);
+          }
+        } catch (error) {
+          console.error('Error fetching today\'s and tomorrow\'s events:', error);
+        }
+      };
+      
+      useEffect(() => {
+        fetchTodaysAndTomorrowsEvents();
+      }, []);
+
+      const handleNotificationClick = () => {
+        // Toggle visibility of notifications
+        setShowNotifications(!showNotifications);
+    };
+    const renderNotification = (event) => {
+        return (
+            <li key={event._id} className="notificationItem">
+                {event.eventname} - {new Date(event.date).toLocaleDateString()} - {event.location}
+            </li>
+        );
+    };
 
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
@@ -49,8 +83,8 @@ function Navbar({ setSelectedLocation }) {
             </div>
 
             <div className="navbarRight">
-                <Link to="/" className='navbarLink'>Homepage</Link>
-                <Link to="/AddPost" className='navbarLink'>Add Post</Link>
+                <Link to="/" className='navbarLink'>Home</Link>
+                <Link to="/AddPost" className='navbarLink'>Profile</Link>
                 <span className='navbarLocation' onClick={handleLocationButtonClick}>
                     {selectedDistrict ? selectedDistrict : "Location"}
                 </span>
@@ -66,9 +100,21 @@ function Navbar({ setSelectedLocation }) {
             </div>
 
             <div className="navbarIcons">
-                <div className="navbarIconItem">
-                    <Notifications />
-                    <span className='navbarIconBadge'>1</span>
+                <div className="dropdown">
+                    <div className="navbarIconItem" onClick={handleNotificationClick}>
+                        <Notifications />
+                        <span className='navbarIconBadge'>{todaysEvents.length + tomorrowsEvents.length}</span>
+                    </div>
+
+                    {/* Display notification list as dropdown */}
+                    {showNotifications && (
+                        <div className="dropdown-content">
+                            <ul className="notificationsList">
+                                {todaysEvents.map(event => renderNotification(event))}
+                                {tomorrowsEvents.map(event => renderNotification(event))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
             </div>
 
