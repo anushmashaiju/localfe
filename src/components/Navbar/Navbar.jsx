@@ -79,7 +79,7 @@ function Navbar({ setSelectedLocation }) {
             <div className="navbarCenter">
                 <div className="searchbar">
                     <Search className='searchIcon' />
-                    <input placeholder='Search for location, post or video' className='searchInput' />
+                    <input placeholder='Search for location or post ' className='searchInput' />
                 </div>
             </div>
 
