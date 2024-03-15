@@ -61,12 +61,11 @@ function Post({ post, postchange, setPostchange }) {
             // Check if a new image has been selected
             if (editedImage instanceof File) {
                 formData.append("image", editedImage);
-            }else {
+            } else {
                 // If no new image is selected, include the existing image URL
                 formData.append("image", post.image);
             }
-
-            const res = await axios.put(`${BASE_URL}/posts/${post._id}`, formData, {
+            const res = await axios.put(`${BASE_URL}/api/posts/${post._id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -76,8 +75,6 @@ function Post({ post, postchange, setPostchange }) {
             setIsEditOpen(false);
         } catch (error) {
             console.error('Error editing post:', error);
-
-            // Log the specific error details
             if (error.response) {
                 console.error('Response data:', error.response.data);
             }
@@ -93,8 +90,8 @@ function Post({ post, postchange, setPostchange }) {
                             alt=""
                             onError={(e) => {
                                 console.error("Image failed to load:", e.target.src)
-                            }} />               
-                        <span className="postUsername">{user.userName}</span>         
+                            }} />
+                        <span className="postUsername">{user.userName}</span>
                         <span className='postLocation'>{post.location}</span>
                     </div>
                     <div className="postTopRight">
@@ -115,32 +112,32 @@ function Post({ post, postchange, setPostchange }) {
                 <div className="postCenter">
                     {isEditOpen ? (
                         <>
-                             <label>Edit Text</label>
-                             <textarea className='editTextArea' value={editedDescription} onChange={(e) => setEditedDescription(e.target.value)} />
-                             <label>Edit Location</label>
-                             <input type="text" name="location" value={editedLocation} onChange={(e) => setEditedLocation(e.target.value)} />
-                             <label>Edit Images/Videos</label>
-                             <input type='file' id="file" accept='.png,.jpeg,.jpg' onChange={(e) => setEditedImage(e.target.files[0])} />
+                            <label>Edit Text</label>
+                            <textarea className='editTextArea' value={editedDescription} onChange={(e) => setEditedDescription(e.target.value)} />
+                            <label>Edit Location</label>
+                            <input type="text" name="location" value={editedLocation} onChange={(e) => setEditedLocation(e.target.value)} />
+                            <label>Edit Images</label>
+                            <input type='file' id="file" accept='.png,.jpeg,.jpg' onChange={(e) => setEditedImage(e.target.files[0])} />
                         </>
                     ) : (
                         <div>
                             <span className='postText'>{editedDescription}</span>
                             <img src={`data:image/jpeg;base64,${isEditOpen ? editedImage : post.image}`} alt='' className='postImg' />
-                    </div>
+                        </div>
                     )}
                 </div>
                 <div className="postBottom">
                     <div className="postBottomLeft">
                         <ThumbUp htmlColor="blue" className='likeIcon' onClick={likeHandler} />
                         <span className="postLikeCounter">{like}</span>
-                    </div>            
+                    </div>
                     <span className='postDate'>{format(post.postDate)}</span>
                     {isCurrentUserPost && isEditOpen && (
                         <button className='editButton' onClick={editHandler}>Save</button>
                     )}
-                    <span className="postDate">{new Date(post.postDate).toLocaleString()}</span>    
+                    <span className="postDate">{new Date(post.postDate).toLocaleString()}</span>
+                </div>
             </div>
-        </div>
         </div>
     )
 }

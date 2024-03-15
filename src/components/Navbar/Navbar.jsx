@@ -20,7 +20,6 @@ function Navbar({ setSelectedLocation }) {
         setIsModalOpen(!isModalOpen);
     };
     const handleLogout = () => {
-    
         // Dispatch the logout action
         dispatch(Logout());
     };
@@ -50,7 +49,7 @@ function Navbar({ setSelectedLocation }) {
             </div>
 
             <div className="navbarRight">
-            <Link to="/" className='navbarLink'>Homepage</Link>
+                <Link to="/" className='navbarLink'>Homepage</Link>
                 <Link to="/AddPost" className='navbarLink'>Add Post</Link>
                 <span className='navbarLocation' onClick={handleLocationButtonClick}>
                     {selectedDistrict ? selectedDistrict : "Location"}
@@ -63,7 +62,7 @@ function Navbar({ setSelectedLocation }) {
                             </div>
                         ))}
                     </div>
-                )}   
+                )}
             </div>
 
             <div className="navbarIcons">
@@ -74,42 +73,34 @@ function Navbar({ setSelectedLocation }) {
             </div>
 
             <div className="dropdown">
-                <img
-                    src={user.profilePicture ? PF + user.profilePicture : PF + "dp/default-avatar-profile-icon-social-600nw-1677509740.webp"}
-                    alt=""
-                    className='navbarImg'
-                />
+                <img src={user.profilePicture ? PF + user.profilePicture : PF + "dp/default-avatar-profile-icon-social-600nw-1677509740.webp"} alt="" className='navbarImg' />
 
                 <div className="dropdown-content">
                     <a href="#1" onClick={toggleModal}>
                         <li className="dropdownListItem">
                             <Edit className='dropdownIcon' />
                             <span className='dropdownListItemText'>Edit</span>
-                        </li>
-                    </a>
-                    
-                    <a href="#3"><li className="dropdownListItem">
+                        </li></a>
+                    <a href="#2"><li className="dropdownListItem">
                         <Bookmark className='dropdownIcon' />
                         <span className='dropdownListItemText'>Bookmark</span>
                     </li></a>
-                    <a href="#4"><li className="dropdownListItem">
+                    <a href="#3"><li className="dropdownListItem">
                         <HelpCenter className='dropdownIcon' />
                         <span className='dropdownListItemText'>Help Center</span>
                     </li></a>
-                    <a href="#5"><li className="dropdownListItem">
+                    <a href="#4"><li className="dropdownListItem">
                         <Settings className='dropdownIcon' />
                         <span className='dropdownListItemText'>Settings</span>
                     </li></a>
-                    <a href="#6"onClick={handleLogout}><li className="dropdownListItem">
-                        <LogoutIcon  className='dropdownIcon' />
+                    <a href="#5" onClick={handleLogout}><li className="dropdownListItem">
+                        <LogoutIcon className='dropdownIcon' />
                         <span className='dropdownListItemText'>LogOut</span>
                     </li></a>
                 </div>
             </div>
-
             <EditProfileModal isOpen={isModalOpen} onRequestClose={toggleModal} />
             <span className='user' title={user.userName}>{user.userName}</span>
-            
         </div>
     );
 }

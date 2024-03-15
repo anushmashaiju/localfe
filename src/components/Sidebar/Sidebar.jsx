@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./sidebar.css"
-import {  Explore,  FitnessCenter,  LocalCafe,  LocalGroceryStore, LocalHospital, LocalHotel, Restaurant, School, Theaters } from '@mui/icons-material'
+import { Explore, FitnessCenter, LocalCafe, LocalGroceryStore, LocalHospital, LocalHotel, Restaurant, School, Theaters } from '@mui/icons-material'
 import AddTouristPlaceModal from './SidebarModal/TouristPlaceModal.jsx.jsx';
 import AddRestaurantModal from './SidebarModal/RestaurantModal.jsx';
 import AddRestandStayModal from './SidebarModal/RestandStay.jsx';
@@ -30,7 +30,7 @@ function Sidebar() {
   const [addedTheatre, setAddedTheatre] = useState([]);
   const [isFittnessModalOpen, setIsFittnessModalOpen] = useState(false);
   const [addedFittness, setAddedFittness] = useState([]);
- 
+
   const handleAddTouristPlace = (touristPlace) => {
     setTouristPlaces(touristPlace)   // Update the state to include the new tourist place  
   };
@@ -58,28 +58,27 @@ function Sidebar() {
   const handleAddFittness = (Fittness) => {
     setAddedFittness(Fittness);
   };
-  
+
   return (
     <div className='sidebar'>
       <div className="sidewrapper">
         <ul className="sidebarList">
-         
           <li className="sidebarListItem" onClick={() => setAddTouristPlaceModalOpen(true)}>
             <Explore className='sidebarIcon' />
             <span className='sidebarListItemText'>Tourist Places</span>
           </li>
-          <li className="sidebarListItem"onClick={() => setIsRestaurantModalOpen(true)}>
+          <li className="sidebarListItem" onClick={() => setIsRestaurantModalOpen(true)}>
             <Restaurant className='sidebarIcon' />
             <span className='sidebarListItemText'>Food Spots</span>
-          </li>           
-          <li className="sidebarListItem"onClick={() => setIsRestandStayModalOpen(true)}>
+          </li>
+          <li className="sidebarListItem" onClick={() => setIsRestandStayModalOpen(true)}>
             <LocalHotel className='sidebarIcon' />
             <span className='sidebarListItemText'>Rest and Stay</span>
           </li>
           <li className="sidebarListItem" onClick={() => setIsHospitalModalOpen(true)}>
             <LocalHospital className='sidebarIcon' />
             <span className='sidebarListItemText'>Hospital</span>
-          </li>         
+          </li>
           <li className="sidebarListItem" onClick={() => setIsCafeModalOpen(true)}>
             <LocalCafe className='sidebarIcon' />
             <span className='sidebarListItemText'>Cafe</span>
@@ -103,17 +102,15 @@ function Sidebar() {
         </ul>
       </div>
       <AddTouristPlaceModal isOpen={isAddTouristPlaceModalOpen} onClose={() => setAddTouristPlaceModalOpen(false)} onAddTouristPlace={handleAddTouristPlace} />
-       <AddRestaurantModal isOpen={isRestaurantModalOpen} onClose={() => setIsRestaurantModalOpen(false)} onAddRestaurant={handleAddRestaurant} />
-       <AddRestandStayModal isOpen={isRestandStayModalOpen} onClose={() => setIsRestandStayModalOpen(false)} onAddRestandStay={handleAddRestandStay} />
-       <AddHospitalModal isOpen={isHospitalModalOpen} onClose={() => setIsHospitalModalOpen(false)} onAddHospital={handleAddHospital} />
-       <AddCafeModal isOpen={isCafeModalOpen} onClose={() => setIsCafeModalOpen(false)} onAddCafe={handleAddCafe} />
-       <AddMallModal isOpen={isMallModalOpen} onClose={() => setIsMallModalOpen(false)} onAddMall={handleAddMall} />
-       <AddSchoolModal isOpen={isSchoolModalOpen} onClose={() => setIsSchoolModalOpen(false)} onAddSchool={handleAddSchool} />
-       <AddTheatreModal isOpen={isTheatreModalOpen} onClose={() => setIsTheatreModalOpen(false)} onAddTheatre={handleAddTheatre} />
-       <AddFittnessModal isOpen={isFittnessModalOpen} onClose={() => setIsFittnessModalOpen(false)} onAddFittness={handleAddFittness} />
-       
+      <AddRestaurantModal isOpen={isRestaurantModalOpen} onClose={() => setIsRestaurantModalOpen(false)} onAddRestaurant={handleAddRestaurant} />
+      <AddRestandStayModal isOpen={isRestandStayModalOpen} onClose={() => setIsRestandStayModalOpen(false)} onAddRestandStay={handleAddRestandStay} />
+      <AddHospitalModal isOpen={isHospitalModalOpen} onClose={() => setIsHospitalModalOpen(false)} onAddHospital={handleAddHospital} />
+      <AddCafeModal isOpen={isCafeModalOpen} onClose={() => setIsCafeModalOpen(false)} onAddCafe={handleAddCafe} />
+      <AddMallModal isOpen={isMallModalOpen} onClose={() => setIsMallModalOpen(false)} onAddMall={handleAddMall} />
+      <AddSchoolModal isOpen={isSchoolModalOpen} onClose={() => setIsSchoolModalOpen(false)} onAddSchool={handleAddSchool} />
+      <AddTheatreModal isOpen={isTheatreModalOpen} onClose={() => setIsTheatreModalOpen(false)} onAddTheatre={handleAddTheatre} />
+      <AddFittnessModal isOpen={isFittnessModalOpen} onClose={() => setIsFittnessModalOpen(false)} onAddFittness={handleAddFittness} />
     </div>
-    
   )
 }
 

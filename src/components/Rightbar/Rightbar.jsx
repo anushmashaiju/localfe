@@ -81,7 +81,6 @@ function Rightbar() {
   return (
     <div className='rightbar'>
       <div className="rigtbarWrapper">
-
         <button className="addEventButton" onClick={openModal}>Add Event</button>
 
         {/* Modal */}
@@ -105,7 +104,6 @@ function Rightbar() {
             </div>
           </div>
         )}
-
 
         <ul className="rightbarBox">
           <li className="rightbarListItem">

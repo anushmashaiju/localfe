@@ -1,11 +1,9 @@
 
 import { Person, Cancel, Send } from '@mui/icons-material';
 import './EditProfileModal.css';
-
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
-
 const EditProfileModal = ({ isOpen, onRequestClose }) => {
 
   return (
