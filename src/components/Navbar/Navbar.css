@@ -98,6 +98,10 @@
   font-size: 12px;
 }
 
+.notificationsList{
+  width: 100px;
+}
+
 .navbarImg {
   width: 32px;
   height: 32px;
