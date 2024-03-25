@@ -227,7 +227,12 @@
   .dropdown {
     display:block;
   }
-
+  .dropdown-content {
+    top: 50px;
+    right: 100px;
+    position:absolute;
+    
+  }
   .user {
   
     display: block; /* Show profile picture dropdown on mobile */
