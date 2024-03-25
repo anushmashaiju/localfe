@@ -1,12 +1,11 @@
 .rightbar {
-  flex: 3;
+  flex: 3; /* Adjusted width */
 }
 
 .rightbarBox {
-  width: 92%;
-  height: 300px;
+  width: 92%; /* Adjusted width */
+  height: auto; /* Let the height be determined by content */
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   margin-top: 20px;
   padding: 10px;
@@ -17,7 +16,7 @@
 }
 
 .rigtbarWrapper {
-  padding: 10;
+  padding: 10px; /* Added padding */
   position: fixed;
   width: 25%;
   z-index: 50;
@@ -27,24 +26,20 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-
 }
 
 .rightbarIcon {
   margin-right: 15px;
-
 }
 
 .todaysEventsContainer {
-  flex: 1;
+  flex: 1; /* Adjusted flex property */
   overflow-y: auto;
-
 }
 
 .todaysEventsList {
   margin-top: 20px;
   align-items: center;
-
 }
 
 .eventItem {
@@ -58,7 +53,7 @@
   color: #fff;
   cursor: pointer;
   border: none;
-  width: 97%;
+  width: 97%; /* Adjusted width */
   border-radius: 10px;
 }
 
@@ -78,7 +73,6 @@
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   z-index: 1000;
-  /* Adjust the z-index value */
 }
 
 .modalContentEvent {
@@ -90,7 +84,8 @@
 
 .closeModalButton {
   position: relative;
-  left: 300px;
+  left: auto; /* Removed left positioning */
+  right: 10px; /* Adjusted right positioning */
   font-size: 20px;
   color: rgb(142, 5, 101);
   cursor: pointer;
@@ -106,7 +101,7 @@
 }
 
 .modalContentEvent input,
-textarea {
+.modalContentEvent textarea {
   margin-bottom: 10px;
   padding: 5px;
 }
@@ -138,4 +133,48 @@ textarea {
 
 .eventDelete:hover {
   background-color: #45a049;
+}
+
+/* Add this at the end of your CSS file */
+
+@media screen and (max-width: 768px) {
+  .rigtbarWrapper {
+    width: 100%; /* Make the sidebar take up full width on smaller screens */
+    position: static; /* Remove fixed positioning */
+  }
+
+  .rightbarBox {
+    width: 100%; /* Make the box take up full width */
+    padding: 20px; /* Increased padding for better spacing */
+  }
+
+  .todaysEventsContainer {
+    flex: auto; /* Allow the container to expand to fit its content */
+  }
+
+  .modalEvent {
+    width: 100%; /* Make the modal take up full width */
+    height: 100%; /* Make the modal take up full height */
+  }
+
+  .modalContentEvent {
+    width: 100%; /* Make the content take up full width */
+    max-width: 400px; /* Limit the width for better readability */
+    margin: 20px auto; /* Center the modal horizontally */
+    padding: 20px; /* Add padding for better spacing */
+  }
+
+  .closeModalButton {
+    left: auto; /* Remove left positioning */
+    right: 10px; /* Move the close button to the right */
+  }
+
+  .eventItem {
+    margin: 10px 0; /* Adjust margin for better spacing */
+  }
+
+  .addEventButton {
+    width: 100%; /* Make the button take up full width */
+    margin-top: 20px; /* Add some space at the top */
+  }
 }
