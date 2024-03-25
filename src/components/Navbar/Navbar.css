@@ -1,16 +1,14 @@
-/* Navbar.css */
-
 .navbarContainer {
   height: 50px;
   background-color: rgb(142, 5, 101);
   display: flex;
   align-items: center;
-  position: sticky; /* Changed from sticky to fixed */
+  position: sticky; 
   top: 0;
-  left: 0; /* Added left: 0 to ensure it sticks to the left edge */
-  right: 0; /* Added right: 0 to ensure it stretches to the right edge */
+  left: 0; 
+  right: 0; 
   z-index: 100;
-  padding: 10px 20px; /* Changed padding-top to padding and adjusted values */
+  padding: 10px 20px; 
 }
 
 .navbarLeft {
@@ -112,7 +110,6 @@
 
 .dropdown {
   float: left;
-  overflow: hidden;
   margin-right: 10px;
 }
 
@@ -180,7 +177,7 @@
   width: 100px;
 }
 .toggleNavbarRight {
-  display: none; /* Initially hide the toggle button on larger screens */
+  display: none; 
   cursor: pointer;
   margin-right: 30px;
 }
@@ -211,7 +208,7 @@
 
   .navbarCenter {
     display: flex;
-    justify-content:center; /* Hide search bar on mobile */
+    justify-content:center;
     margin-left: 20px;
   }
 
@@ -230,12 +227,11 @@
 
   .user {
     margin-right: 20px;
-    display: block; /* Show profile picture dropdown on mobile */
-    /* Show username on mobile */
+    display: block; 
   }
 
   .toggleNavbarRight {
-    display: block; /* Show the toggle button on smaller screens */
+    display: block; 
   padding: 20px;
   }
 
@@ -244,7 +240,7 @@
     display: flex !important; 
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Adjust according to your design */
+    top: 60px;
     right: 0;
     background-color: rgb(142, 5, 101);
     width: 100%;
@@ -252,13 +248,13 @@
   .navbarLinksContainer {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start of the flex container */
-    margin-right: 20px; /* Adjust margin as needed */
+    align-items: flex-start; 
+    margin-right: 20px;
   }
   .navbarRight.active .navbarLink,
   .navbarRight.active .navbarLocation
    {
-    display: block; /* Show navbarLink, navbarLocation, and dropdown content */
+    display: block;
     margin-bottom: 10px;
   }
 }

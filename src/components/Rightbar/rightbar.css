@@ -1,10 +1,10 @@
 .rightbar {
-  flex: 3; /* Adjusted width */
+  flex: 3;
 }
 
 .rightbarBox {
-  width: 92%; /* Adjusted width */
-  height: auto; /* Let the height be determined by content */
+  width: 92%;
+  height: auto; 
   border-radius: 10px;
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   margin-top: 20px;
@@ -16,7 +16,7 @@
 }
 
 .rigtbarWrapper {
-  padding: 10px; /* Added padding */
+  padding: 10px; 
   position: fixed;
   width: 25%;
   z-index: 50;
@@ -33,7 +33,7 @@
 }
 
 .todaysEventsContainer {
-  flex: 1; /* Adjusted flex property */
+  flex: 1;
   overflow-y: auto;
 }
 
@@ -53,7 +53,7 @@
   color: #fff;
   cursor: pointer;
   border: none;
-  width: 97%; /* Adjusted width */
+  width: 97%; 
   border-radius: 10px;
 }
 
@@ -84,8 +84,8 @@
 
 .closeModalButton {
   position: relative;
-  left: auto; /* Removed left positioning */
-  right: 10px; /* Adjusted right positioning */
+  left: auto;
+  right: 10px; 
   font-size: 20px;
   color: rgb(142, 5, 101);
   cursor: pointer;
@@ -135,46 +135,45 @@
   background-color: #45a049;
 }
 
-/* Add this at the end of your CSS file */
 
 @media screen and (max-width: 768px) {
   .rigtbarWrapper {
-    width: 100%; /* Make the sidebar take up full width on smaller screens */
-    position: static; /* Remove fixed positioning */
+    width: 100%; 
+    position: static;
   }
 
   .rightbarBox {
-    width: 100%; /* Make the box take up full width */
-    padding: 20px; /* Increased padding for better spacing */
+    width: 100%;
+    padding: 20px;
   }
 
   .todaysEventsContainer {
-    flex: auto; /* Allow the container to expand to fit its content */
+    flex: auto;
   }
 
   .modalEvent {
-    width: 100%; /* Make the modal take up full width */
-    height: 100%; /* Make the modal take up full height */
+    width: 100%; 
+    height: 100%; 
   }
 
   .modalContentEvent {
-    width: 100%; /* Make the content take up full width */
-    max-width: 400px; /* Limit the width for better readability */
-    margin: 20px auto; /* Center the modal horizontally */
-    padding: 20px; /* Add padding for better spacing */
+    width: 100%; 
+    max-width: 400px; 
+    margin: 20px auto; 
+    padding: 20px; 
   }
 
   .closeModalButton {
-    left: auto; /* Remove left positioning */
-    right: 10px; /* Move the close button to the right */
+    left: auto; 
+    right: 10px; 
   }
 
   .eventItem {
-    margin: 10px 0; /* Adjust margin for better spacing */
+    margin: 10px 0; 
   }
 
   .addEventButton {
-    width: 100%; /* Make the button take up full width */
-    margin-top: 20px; /* Add some space at the top */
+    width: 100%; 
+    margin-top: 20px; 
   }
 }

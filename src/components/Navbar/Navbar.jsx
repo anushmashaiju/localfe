@@ -1,5 +1,3 @@
-// Navbar.js
-
 import React, { useContext, useEffect, useState } from 'react';
 import "./Navbar.css";
 import { Bookmark, Edit, HelpCenter, Notifications, Search, Settings } from '@mui/icons-material';
@@ -46,8 +44,6 @@ function Navbar({ setSelectedLocation }) {
         setIsModalOpen(!isModalOpen);
     };
     const handleLogout = () => {
-
-        // Dispatch the logout action
         dispatch(Logout());
     };
 

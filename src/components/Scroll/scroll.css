@@ -17,10 +17,10 @@
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .scroll {
-        height: 60px; /* Adjust as needed */
+        height: 60px; 
     }
 
     .scrolltext {
-        font-size: 40px; /* Adjust as needed */
+        font-size: 40px; 
     }
 }

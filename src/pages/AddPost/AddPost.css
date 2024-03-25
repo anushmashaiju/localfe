@@ -1,16 +1,14 @@
 .addPost{
-    margin: 10px;
-    
+    margin: 10px;   
 }
 
 .addfeed{
-    margin: 10px 200px  ;
-    
+    margin: 10px 200px  ;   
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .addfeed {
-        margin: 10px; /* Adjusted margin for smaller screens */
+        margin: 10px; 
     }
 }

@@ -1,6 +1,7 @@
-.signup {
+
+  .signup {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: white;
     display: flex;
     align-items: center;
@@ -8,101 +9,96 @@
     background-image: url("../../../public/assets/city/2\ image.jpg");
     background-size: cover;
     background-position: right;
-}
-
-.signupWrapper {
+  }
+  
+  .signupWrapper {
     width: 90%;
     height: 100%;
     display: flex;
-}
-
-.signupRight {
+  }
+  
+  .signupRight {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.signupLeft {
+  }
+  
+  .signupLeft {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-}
-
-.signupLogo {
+  }
+  
+  .signupLogo {
     font-size: 55px;
     font-weight: 800;
     color: rgb(248, 238, 226);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 40px;
-
-}
-
-.signupDescription {
+  }
+  
+  .signupDescription {
     font-size: 20px;
     margin: 20px;
     font-weight: 800;
     color: rgb(248, 238, 226);
-
-}
-
-.signup-box-container {
+  }
+  
+  .signup-box-container {
     max-width: 100%;
-    margin-left: 100px;
+  
     padding: 40px;
     border: solid rgb(142, 5, 101) 2px;
     border-radius: 5px;
     background-color: rgb(248, 238, 226);
-
-}
-
-.signup-row {
+  }
+  
+  .signup-row {
     display: flex;
     flex-wrap: wrap;
     margin: 15px -5px;
-
-}
-
-.signup-item {
+  }
+  
+  .signup-item {
     margin: 12px;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-label {
+  }
+  
+  label {
     display: block;
     margin-bottom: 5px;
     font-size: 16px;
     font-weight: 500;
     color: rgb(142, 5, 101);
-}
-
-input {
+  }
+  
+  input {
     padding: 8px;
     margin: 5px 0;
     border-radius: 10px;
     width: 100%;
     color: rgb(142, 5, 101);
-}
-
-.radio-buttons {
+  }
+  
+  .radio-buttons {
     display: flex;
     align-items: center;
     margin: 2px;
-}
-
-.radio-buttons input {
+  }
+  
+  .radio-buttons input {
     margin: 2px;
-}
-
-.radio-buttons label {
+  }
+  
+  .radio-buttons label {
     margin: 2px;
-}
-
-.signupButton {
+  }
+  
+  .signupButton {
     width: 65%;
     height: 50px;
     border-radius: 10px;
@@ -114,11 +110,42 @@ input {
     cursor: pointer;
     display: block;
     margin: auto;
-}
-
-.login-link {
+  }
+  
+  .login-link {
     text-align: center;
     margin-top: 20px;
     cursor: pointer;
     color: rgb(142, 5, 101);
-}
+  }
+  /* Responsive CSS */
+@media only screen and (max-width: 768px) {
+    .signupWrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .signupLeft {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  
+    .signupRight {
+      margin-left: 0;
+    }
+  
+    .signup-box-container {
+  
+    margin-right: 10px;
+  
+    }
+  
+    .signup-item {
+      width: 100%;
+    }
+  
+    .signupButton {
+      width: 100%;
+    }
+  }
+  

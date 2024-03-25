@@ -11,7 +11,7 @@ export default function Login() {
   const {isFetching,  dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // Retrieve email and password from localStorage during component mount
+  
   useEffect(() => {
     const savedEmail = localStorage.getItem('savedEmail');
     const savedPassword = localStorage.getItem('savedPassword');

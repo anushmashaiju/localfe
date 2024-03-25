@@ -37,7 +37,7 @@ function Post({ post, postchange, setPostchange }) {
         try {
             await axios.put(`${BASE_URL}/api/posts/${post._id}/like`, { userId: currentUser._id });
         } catch (err) {
-            // Handle errors
+    
         }
         setLike(isLiked ? like - 1 : like + 1);
         setIsLiked(!isLiked);
@@ -46,7 +46,7 @@ function Post({ post, postchange, setPostchange }) {
     const deleteHandler = async () => {
         try {
             await axios.delete(`${BASE_URL}/api/posts/${post._id}`, { data: { userId: currentUser._id } });
-            setPostchange(!postchange); // Trigger a re-fetch or re-render to update the posts
+            setPostchange(!postchange);
         } catch (error) {
             console.error('Error deleting post:', error);
         }
@@ -56,13 +56,12 @@ function Post({ post, postchange, setPostchange }) {
             const formData = new FormData();
             formData.append("userId", currentUser._id);
             formData.append("description", editedDescription);
-            formData.append("location", editedLocation); // Include location in the form data
+            formData.append("location", editedLocation); 
 
-            // Check if a new image has been selected
             if (editedImage instanceof File) {
                 formData.append("image", editedImage);
             } else {
-                // If no new image is selected, include the existing image URL
+           
                 formData.append("image", post.image);
             }
             const res = await axios.put(`${BASE_URL}/api/posts/${post._id}`, formData, {
