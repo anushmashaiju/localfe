@@ -135,45 +135,27 @@
   background-color: #45a049;
 }
 
+/* Add this at the end of your CSS file */
 
 @media screen and (max-width: 768px) {
   .rigtbarWrapper {
-    width: 100%; 
-    position: static;
+    width: 100%; /* Make the sidebar take up full width on smaller screens */
+    position: static; /* Remove fixed positioning */
   }
 
   .rightbarBox {
-    width: 100%;
-    padding: 20px;
+   display: none;
   }
-
-  .todaysEventsContainer {
-    flex: auto;
-  }
-
-  .modalEvent {
-    width: 100%; 
-    height: 100%; 
-  }
-
-  .modalContentEvent {
-    width: 100%; 
-    max-width: 400px; 
-    margin: 20px auto; 
-    padding: 20px; 
-  }
-
-  .closeModalButton {
-    left: auto; 
-    right: 10px; 
-  }
-
-  .eventItem {
-    margin: 10px 0; 
-  }
-
   .addEventButton {
-    width: 100%; 
-    margin-top: 20px; 
+   
+    width: 50%; 
+   font-size: 10px;
+  }
+  .modalEvent {
+    display: flex !important; 
+    flex-direction: column;
+    position: absolute;
+    right: 0;  
+    width: 100%;
   }
 }

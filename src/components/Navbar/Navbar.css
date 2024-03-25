@@ -1,14 +1,16 @@
+/* Navbar.css */
+
 .navbarContainer {
   height: 50px;
   background-color: rgb(142, 5, 101);
   display: flex;
   align-items: center;
-  position: sticky; 
+  position:sticky; /* Changed from sticky to fixed */
   top: 0;
-  left: 0; 
-  right: 0; 
+  left: 0; /* Added left: 0 to ensure it sticks to the left edge */
+  right: 0; /* Added right: 0 to ensure it stretches to the right edge */
   z-index: 100;
-  padding: 10px 20px; 
+  padding: 10px 20px; /* Changed padding-top to padding and adjusted values */
 }
 
 .navbarLeft {
@@ -177,7 +179,7 @@
   width: 100px;
 }
 .toggleNavbarRight {
-  display: none; 
+  display: none; /* Initially hide the toggle button on larger screens */
   cursor: pointer;
   margin-right: 30px;
 }
@@ -193,6 +195,7 @@
 @media screen and (max-width: 768px) {
   .navbarContainer {
     justify-content: space-between;
+    position: fixed;
   }
 
   .navbarLeft {
@@ -208,7 +211,7 @@
 
   .navbarCenter {
     display: flex;
-    justify-content:center;
+    justify-content:center; /* Hide search bar on mobile */
     margin-left: 20px;
   }
 
@@ -226,12 +229,13 @@
   }
 
   .user {
-    margin-right: 20px;
-    display: block; 
+  
+    display: block; /* Show profile picture dropdown on mobile */
+    /* Show username on mobile */
   }
 
   .toggleNavbarRight {
-    display: block; 
+    display: block; /* Show the toggle button on smaller screens */
   padding: 20px;
   }
 
@@ -240,7 +244,7 @@
     display: flex !important; 
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 60px; /* Adjust according to your design */
     right: 0;
     background-color: rgb(142, 5, 101);
     width: 100%;
@@ -248,13 +252,18 @@
   .navbarLinksContainer {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    margin-right: 20px;
+    align-items: flex-start; /* Align items to the start of the flex container */
+    margin-right: 20px; /* Adjust margin as needed */
   }
   .navbarRight.active .navbarLink,
   .navbarRight.active .navbarLocation
    {
-    display: block;
+    display: block; /* Show navbarLink, navbarLocation, and dropdown content */
     margin-bottom: 10px;
+  }
+  .districtDropdown {
+    top: 100px;
+    right: 100px;
+    width:200px;
   }
 }

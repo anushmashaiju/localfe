@@ -33,7 +33,7 @@ function AddHospitalModal({ isOpen, onClose, onAddHospital }) {
 
   return (
     <div style={{ display: isOpen ? 'flex' : 'none' }} className="modal">
-      <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '5px', width: '80%', maxWidth: '400px' }} className="modalContent">
+      <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '5px', width: '30%', maxWidth: '400px' }} className="modalContent">
         <h2 style={{ textAlign: 'center' }}>Add Hospital</h2>
 
         {/* Hospital Name */}
