@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { Logout } from '../../context/AuthActions';
 import LogoutIcon from '@mui/icons-material/Logout';
 import axios from 'axios';
+import { BASE_URL } from '../../constants/constants';
 
 
 function Navbar({ setSelectedLocation }) {
@@ -24,7 +25,7 @@ function Navbar({ setSelectedLocation }) {
     
     const fetchTodaysAndTomorrowsEvents = async () => {
         try {
-            const res = await axios.get('http://localhost:8800/api/events/todaysAndTomorrowsEvents');
+            const res = await axios.get(`${BASE_URL}/api/events/todaysAndTomorrowsEvents`);
             if (res.status === 200) {
                 const { todaysEvents, tomorrowsEvents } = res.data;
                 setTodaysEvents(todaysEvents);

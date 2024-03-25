@@ -5,7 +5,7 @@
   background-color: rgb(142, 5, 101);
   display: flex;
   align-items: center;
-  position: fixed; /* Changed from sticky to fixed */
+  position: sticky; /* Changed from sticky to fixed */
   top: 0;
   left: 0; /* Added left: 0 to ensure it sticks to the left edge */
   right: 0; /* Added right: 0 to ensure it stretches to the right edge */
