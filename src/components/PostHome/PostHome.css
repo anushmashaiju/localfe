@@ -4,8 +4,7 @@
   -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   margin: 5px 5px;
-  background-color: rgb(248, 238, 226);
-  
+  background-color: rgb(248, 238, 226); 
 }
 
 .postWrapper {
@@ -70,7 +69,6 @@
   cursor: pointer;
 }
 
-
 .postLikeCounter {
   font-size: 12px;
 }
@@ -120,15 +118,16 @@
   margin-bottom: 10px;
 }
 
-.editButton {
+.editButton,.cancelButton{
   background-color: rgb(142, 5, 101);
   color: white;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
-.editButton:hover {
+.editButton:hover,.cancelButton:hover {
   background-color: #45a049;
 }
 /* Responsive Styles */

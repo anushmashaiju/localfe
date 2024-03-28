@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from 'react';
 import './Home.css';
 import Navbar from '../../components/Navbar/Navbar';
@@ -28,7 +27,6 @@ function Home() {
 
   const fetchPosts = async () => {
     try {
-      //const res = await axios.get(`http://localhost:8800/api/posts`);
       const res = await axios.get(`${BASE_URL}/api/posts/location/${selectedLocation}`);
       setPosts(
         res.data.sort((p1, p2) => {
@@ -37,7 +35,6 @@ function Home() {
       );
     } catch (error) {
       console.error('Error fetching posts:', error.message);
-      // Handle the error as needed (e.g., show a user-friendly message, log the error, etc.)
     }
   };
 

@@ -1,5 +1,4 @@
-
-  .signup {
+ .signup {
     width: 100vw;
     min-height: 100vh;
     background-color: white;
@@ -118,7 +117,7 @@
     cursor: pointer;
     color: rgb(142, 5, 101);
   }
-  /* Responsive CSS */
+
 @media only screen and (max-width: 768px) {
     .signupWrapper {
       flex-direction: column;
@@ -135,9 +134,7 @@
     }
   
     .signup-box-container {
-  
     margin-right: 10px;
-  
     }
   
     .signup-item {

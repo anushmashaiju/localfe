@@ -115,32 +115,32 @@
     
     .loginBox {
         width: 90%;
-        max-width: 200px; /* Set a maximum width */
+        max-width: 200px;
         margin: 20px auto; 
         align-self: center;
        
     }
 
     .loginLogo {
-        margin: 20px 0; /* Adjust margin to provide space */
+        margin: 20px 0; 
         align-self: center;
       
     }
 
     .loginDescription {
-        margin-bottom: 20px; /* Adjust margin to provide space */
+        margin-bottom: 20px; 
         align-self: center;
         margin-right: 40px;
     }
 
     .loginInput {
-        width: 100%; /* Adjust width to fill the container */
-        max-width: none; /* Remove max-width */
+        width: 100%; 
+        max-width: none; 
         align-self: center;
     }
 
     .loginButton,
     .createButton {
-        width: 100%; /* Adjust width to fill the container */
+        width: 100%; 
     }
 }

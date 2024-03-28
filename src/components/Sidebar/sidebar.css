@@ -33,7 +33,6 @@
     margin-right: 15px;
 }
 
-/* Responsive Styles */
 @media screen and (max-width: 768px) {
     .sidewrapper {
         width: 100%; 

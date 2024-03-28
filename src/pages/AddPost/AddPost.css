@@ -6,7 +6,6 @@
     margin: 10px 200px  ;   
 }
 
-/* Responsive Styles */
 @media screen and (max-width: 768px) {
     .addfeed {
         margin: 10px; 

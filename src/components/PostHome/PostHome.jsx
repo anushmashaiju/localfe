@@ -132,7 +132,10 @@ function Post({ post, postchange, setPostchange }) {
                     </div>
                     <span className='postDate'>{format(post.postDate)}</span>
                     {isCurrentUserPost && isEditOpen && (
-                        <button className='editButton' onClick={editHandler}>Save</button>
+                       <div>
+                       <button className='editButton' onClick={editHandler}>Save</button>
+                       <button className='cancelButton' onClick={() => setIsEditOpen(false)}>Cancel</button>
+                       </div>
                     )}
                     <span className="postDate">{new Date(post.postDate).toLocaleString()}</span>
                 </div>
